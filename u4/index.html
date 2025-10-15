@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tema 3. Unidad 4. Almacenamiento local (cookkies)</title>
+</head>
+<body>
+
+    <script type="module">
+        import { CookieApi } from './u4e1.js';
+
+        const cookies = new CookieApi();
+
+        cookies.setCookie('simple', '123', 365);
+        console.log('noExists:', cookies.getCookie('noExists'));
+        console.log('simple:', cookies.getCookie('simple'));
+        cookies.removeCookie('simple');
+        console.log('simple after removal:', cookies.getCookie('simple'));
+    </script>
+</body>
+</html>

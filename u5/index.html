@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tema 3. Unidad 4. APIs: Clipboard</title>
+    <style>
+        body {
+            padding: 32px;
+        }
+
+        .board {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+        }
+
+        .half {
+            flex: 1 1 auto;
+            width: 80%;
+        }
+
+        .half + .half {
+            margin-left: 10%;
+        }
+
+        .half p {
+            min-height: 140px;
+            padding: 24px;
+            background-color: hsl(0, 0%, 92%);
+        }
+    </style>
+</head>
+<body id="#app">
+    <div class="board">
+        <div class="half">
+            <h2>Text to copy (editable):</h2>
+            <p class="js-copy-from" contenteditable="true">Copy me!</p>
+            <button class="js-copy-button">Copy!</button>
+        </div>
+        <div class="half">
+            <h2>Pasted text:</h2>
+            <p class="js-copy-to"></p>
+            <button class="js-paste-button">Paste!</button>
+        </div>
+    </div>
+
+
+    <script type="module">
+        import { ClipboardApi } from './u5e1.js';
+
+        const clipboard = new ClipboardApi();
+
+        document.querySelector('.js-copy-button').addEventListener('click', (ev) => {
+            const copiedText = document.querySelector('.js-copy-from').textContent;
+            clipboard.copy(copiedText);
+        });
+
+        document.querySelector('.js-paste-button').addEventListener('click', (ev) => {
+            clipboard.read().then((clipText) => {
+                document.querySelector('.js-copy-to').innerText = clipText;
+            });
+        });
+    </script>
+</body>
+</html>

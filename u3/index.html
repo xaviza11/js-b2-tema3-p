@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tema 3. Unidad 3. Eventos personalizados (custom events)</title>
+    <style>
+        .sender {
+            display: inline-block;
+            min-width: 56px;
+            padding: 4px 8px;
+            border: 0;
+
+            text-align: center;
+            text-decoration: none;
+            color: hsl(0, 0%, 0%);
+
+            background-color: hsl(0, 0%, 88%);
+            border-radius: 3px;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="app">
+
+        <h2>Emisores</h2>
+        <div>
+            <a class="sender js-notification-A" href="">A</a>
+            <a class="sender js-notification-B" href="">B</a>
+        </div>
+
+        <h2>Lista de mensajes</h2>
+        <div class="js-logger"></div>
+
+    </div>
+
+    <script src="u3e1.js"></script>
+</body>
+</html>
