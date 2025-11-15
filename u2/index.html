@@ -14,13 +14,17 @@
         <a class="js-todo-add" href="">Add</a>
 
         <h2>Task list</h2>
-        <ul class="js-todo-list">
-
-        </ul>
+        <ul class="js-todo-list"></ul>
     </div>
 
     <!-- BEGIN templates zone -->
-
+    <template id="todo-tpl">
+        <li class="js-todo" data-todo="" data-done="">
+            <span class="js-todo-name"></span>
+            <a class="js-todo-done" href="">pending</a>
+            <a class="js-todo-delete" href="">delete</a>
+        </li>
+    </template>
     <!-- END templates zone -->
 
     <script src="u2e1.js"></script>

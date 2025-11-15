@@ -1,21 +1,45 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Tema 3. Unidad 1. Trabajo avanzado con DOM</title>
-</head>
-<body>
-
+  </head>
+  <body>
     <div id="app">
-        <div class="js-project-list"></div>
+      <div class="js-project-list"></div>
     </div>
 
-    <!-- BEGIN templates zone -->
+    <template id="tpl-project">
+      <div
+        class="js-project"
+        data-id=""
+        data-tags=""
+        data-search=""
+        data-archived=""
+      >
+        <h2>
+          <span class="js-name">[*project_name*]</span> (<span
+            class="js-progress"
+            >[*progress*]</span
+          >%)
+        </h2>
+        <p class="js-excerpt">[*project_excerpt*]</p>
+        <div>
+          <span class="js-category">[*category_name*]</span>
+          <span class="js-tags"></span>
+        </div>
+      </div>
+    </template>
 
-    <!-- END templates zone -->
+    <template id="tpl-tag">
+      <span class="js-tag">
+        <a class="js-tag-link" data-tag="[*tag*]" href="">[*tag*]</a>
+      </span>
+    </template>
+
+    <div class="js-project-list"></div>
 
     <script src="u1e2.js"></script>
-
-</body>
+  </body>
 </html>
